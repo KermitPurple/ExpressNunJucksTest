@@ -1,0 +1,15 @@
+{%extends "base.html"%}
+{%block links%}
+    {{super()}} 
+    <link rel="stylesheet" href="css/index.css" type="text/css" media="all">
+{%endblock links%}
+{%block content%}
+    <div class="container">
+        <h1>This is a test of express</h1>
+        <p>It sure do be doin stuff</p>
+        <p>I am exactly <span id=age></span> years old</p>
+    </div>
+{%endblock content%}
+{%block scripts%}
+    <script src="js/index.js"></script>
+{%endblock scripts%}   
