@@ -8,6 +8,17 @@
         <h1>This is a test of express</h1>
         <p>It sure do be doin stuff</p>
         <p>I am exactly <span id=age></span> years old</p>
+        <h2><a href="{{link}}">My Github</a></h2>
+        <div class="repos_container container">
+            <div class="public container repo_type">
+                <h4>Public repositiores:</h4>
+                <p class="repo_num">{{public_repos}}</p>
+            </div>
+            <div class="private container repo_type">
+                <h4>Private repositories:</h4>
+                <p class="repo_num">{{private_repos}}</p>
+            </div>
+        </div>
     </div>
 {%endblock content%}
 {%block scripts%}

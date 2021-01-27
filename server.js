@@ -17,8 +17,11 @@ app.use(express.static(STATIC_DIR));
 
 app.get('/', async(req, res)=>{
     const response = await octokit.request('GET /user');
-    console.log(response);
-    res.render('index.html');
+    res.render('index.html', {
+        public_repos: response.data.public_repos,
+        private_repos: response.data.owned_private_repos,
+        link: response.data.html_url,
+    });
 });
 
 app.listen(PORT, ()=>{
