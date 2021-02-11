@@ -3,7 +3,8 @@
 }
 
 .repos_container{
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 a{
@@ -11,7 +12,14 @@ a{
     text-decoration: none;
 }
 
-.repo_type{
-    width: 50%;
+.repo_stats{
+    width: 100%;
+    grid-column: span 2;
 }
 
+.bar{
+    background: grey;
+    text-align: left;
+    overflow: visible;
+    white-space: nowrap;
+}

@@ -18,6 +18,12 @@
                 <h4>Private repositories:</h4>
                 <p class="repo_num">{{private_repos}}</p>
             </div>
+            <div class="container repo_stats">
+                <h4>Repository Stats</h4>
+                {%for language, ammount in language_data%}
+                <div class="bar {{language}}" value={{ammount}} style="width: {{ammount / highest_language_value * 100}}%">{{language}}</div>
+                {%endfor%}
+            </div>
         </div>
     </div>
 {%endblock content%}
