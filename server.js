@@ -34,6 +34,9 @@ async function get_githup_api_data(){
     let language_data = {};
     let highest_language_value = 0;
     const user = await octokit.request('GET /user');
+    github_api_data.public_repos = user.data.public_repos;
+    github_api_data.private_repos = user.data.total_private_repos;
+    github_api_data.link = user.data.html_url;
     let repos = [];
     for(let i = 1;; i++){
         const repo_page = await octokit.request(`GET /search/repositories?q=user:${user.data.login}&per_page=100&page=${i}`);
@@ -51,9 +54,6 @@ async function get_githup_api_data(){
             highest_language_value = Math.max(language_data[language], highest_language_value);
         }
     }
-    github_api_data.public_repos = user.data.public_repos;
-    github_api_data.private_repos = user.data.total_private_repos;
-    github_api_data.link = user.data.url;
     github_api_data.language_data = language_data;
     github_api_data.highest_language_value = highest_language_value;
     console.log('updated github_api_data');
