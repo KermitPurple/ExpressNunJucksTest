@@ -18,8 +18,10 @@ a{
 }
 
 .bar{
-    background: grey;
+    background: #559;
     text-align: left;
     overflow: visible;
     white-space: nowrap;
+    padding: 2px;
+    margin: 3px;
 }
